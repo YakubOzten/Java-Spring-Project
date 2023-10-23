@@ -85,21 +85,32 @@
 // console.log(data14.lastIndexOf("js"));
 
 // ÖDEV // kullanıcı tarafından girilen bir kelimenin (prompt)
-// let userData = prompt("Lütfen bir şeyler yazınız");
+//let userData = prompt("Lütfen bir şeyler yazınız");
 // S-1) Kaç karakterlidir ? (length)
+//userData.length;
 // S-2) boşluklar alınarak Kaç karakterlidir ? (trim)
+//userData.trim;
 // S-3) bütün kelimeyi küçük harfle göstermek ? (toLowerCase())
+//userData.toLowerCase();
 // S-4) bütün kelimeyi büyük harfle göstermek ? (toUpperCase());
+//userData.toUpperCase();
 // S-5) Kullanıcıdan alınan ilk kelimeyle , "javascript" kelimeyle değiştirin. (replace, substring, indexOf)
+//console.log(userData.substring(0, userData.indexOf(' ')));//ilk kelime
+//let newUserData = userData.replace(userData.split(' ')[0], 'Javascript');
+// console.log(newUserData);
 // console.log(userData.replace("xxxxxxx"),"javascript");
 // console.log(userData.replace(userData.substring(0,userData.indexOf(" ")),"javascript"));
 // S-6) yazdığınız kelimede "javascript ile mi başlıyor" ? (startsWith())
+//console.log(userData.startsWith("javascript"));
 // console.log(userData.startsWith("javascript") ? "ewet" : "hayır");
 // S-7) yazdığınız kelimede "javascript ile mi bitiyor" ? (endsWith())
 // console.log(userData.endsWith("javascript") ? "ewet" : "hayır");
 // S-8) ilk harf nedir  ? (charAt())
+// console.log(userData.charAt(0));
 // S-9) girdiğiniz kelimenin sonuna "-ben js öğreniyorum" (concat())
+//console.log(userData.concat('-ben js öğreniyorum'));
 // S-10) girdiğiniz 0 ile 4 arasındaki indexi ekranda gösterin? (subString())
+// console.log(userData.substring(0,4));
 
 // Örnek
 // 1.YOL normal diziyle yapalım.
@@ -109,6 +120,30 @@
 // bu tek sayıların sonuna 5 ekleyelim          ==> (map)
 // buradaki sayıları ekranda gösterelim. ?      ==> (forEach)
 // bu şarta uyan kaç tane sayı vardır ?         ==> (counter)
+//1.yol
+// let data = [];
+// let counter;
+// for (let i = 0; i < 10; i++) {
+//     data[i] = Math.floor(Math.random() * 9 + 1);
+//     if (data[i] % 2 != 0) {
+//         data[i] += 5;
+//         counter++;
+//         document.writeln(data[i]);
+//     }
+// }
+//2.yol
+// let counter = 0;
+// const arr = [...Array(10).keys()].map((val) => Math.floor(Math.random() * 9
+//     + 1)).filter((num) => num % 2 !== 0).map(odd => {
+//         return odd += 5;
+//     }).forEach((value, index, dizi) => {
+//         document.write(` ${value}<br>`);
+//         counter++;
+//     });
+// console.log(231, counter);
+
+
+
 
 //NOT: örneklerimizi function,anonymous ve arrow function ile yapalım.
 //NOT: değişken olarak var,let,const kullanalım.
@@ -124,21 +159,87 @@
 //Örnek-4: Aşağıdaki örnekleri math ile çözelim ?
 // -5.9 sayıyının aşağıdaki işlemleri yaptıralım ?
 // 1-mutlak değeri alsın 5.9
+console.log(Math.abs(-5.9));
 // 2-yuvarlama yapsın  6.0
+console.log(Math.round(6.2));
 // 3-karesini alsın 36.00
+console.log(Math.pow(6, 2));
 // 4-karekök alsın 6.0
+console.log(Math.sqrt(36.00));
 // 5-yuvarlama yapsın 6.0
+console.log(Math.round(6.2));
 // 6-)çıkan sonucu 5 bölsün 6/5=1
+console.log((parseInt)(6 / 5));
 // 7-) iki sayı arasından karşılaştırma yapsın en küçüğünü alsın ve 1 ve 5
+console.log(Math.min(1, 5));
+let sayı = Math.min(1, 5);
 // 8-) küçük sayı eğer tekse 3 eklesin çiftse 5 eklesin 
+console.log(sayı % 2 == 0 ? sayı + 2 : sayı + 5)
 // Örnek-5 : kullanıcı tarafından girilen bir sayıyı negatif mi pozitif mi olduğu ekran yazdıran algoritma ?
+// let userDataa;
+// let isNumber = false;
+
+// while (!isNumber) {
+//     userDataa = prompt("Lütfen bir sayı yazınız");
+//     isNumber = !isNaN(userDataa) && userDataa !== '';
+
+//     if (!isNumber) {
+//         alert("Lütfen geçerli bir sayı girin.");
+//     } else {
+//         document.writeln(userDataa > 0 ? "pozitif" : "negatif")
+//     }
+// }
+
 //NOT: cast kullalım ?
 // Örnek-6 : kullanıcı tarafından password ve repassword alalım sonrasında bu iki değeri karşılaştırma yapalım
 //eğer aynı girilirse aynı veri yoksa birbirine uymadı yazan algoritma yapalım
+// userpw = prompt("Lütfen Şifrenizi Giriniz");
+// secondpw = prompt("Lütfen ikincil şifrenizi Giriniz");
+// console.log(userpw ?? secondpw);
+
+// if (userpw === secondpw) {
+//     console.log('Aynı Veriler');
+// } else {
+//     console.log('Birbirine   Uymamaktadır')
+// }
 
 
 // ÖDEV 
 // kullanıcıdan aldığımız isim soyisim (boşluk var)
+// let usernameandsurname = prompt("Lütfen isim ve soyisminizi yazınız.");
+// let name = usernameandsurname.substring(0, usernameandsurname.indexOf(' '))
+// let surname = usernameandsurname.substring(name.length, usernameandsurname.length)
+// surname = surname.trim();
+// let cursor = ['*', '*', '*']
+// // console.log(usernameandsurname.substring(0, usernameandsurname.indexOf(' ')));
+// if (name[0].toUpperCase() != name.charAt(0)) {
+//     false;
+// } else {
+
+//     let maskedWord = "";
+//     for (let j = 0; j < name.length; j++) {
+//         maskedWord += j === 0 ? name[j] : "*";
+//     }
+
+//     document.writeln(maskedWord);
+// }
+
+// if (surname[0].charAt(0).toUpperCase() != surname[0].charAt(0)) {
+//     false;
+// } else {
+//     let maskedWord = "";
+//     for (let i = 0; i < surname.length; i++) {
+
+//         if (i === 0 || i === 1 || i === 2) {
+//             maskedWord += surname[i]; // İlk üç harfi göster
+//         } else {
+//             maskedWord += "*"; // Diğer harfleri maskele
+//         }
+//     }
+//     document.writeln(maskedWord);
+// }
+//     // splitname[0].replace(splitname[0][i], '*');
+//     // splitname[1].replace(splitname[1][i], '*');
 // ilk karakter göstersin sonraki kelimeleri masking (maskeleme yapsın)
 // eğer kullanıcı isim ve soyisimi ilk karakteri küçük girmişse büyük olsun mutlaka
 // Hamit Mızrak
@@ -364,7 +465,7 @@ const dataArray = () => {
 
     //let data15=arr.toString().substring(0,4);
     let data15 = arr.join(" ");
-    console.log(data15);
+    //console.log(data15);
 }
 //dataArray();
 
@@ -377,7 +478,7 @@ const dataArray2 = () => {
     //console.log(array);
     return array;
 }
-dataArray2();
+//dataArray2();
 
 
 const dataArray3 = () => {
@@ -402,7 +503,7 @@ const dataArray3 = () => {
     // });
 
 }
-dataArray3();
+//dataArray3();
 
 /////////////////////////////////////////////////////////////////////////////
 // Object
